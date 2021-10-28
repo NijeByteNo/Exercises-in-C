@@ -1,0 +1,3 @@
+Take tempeature of Dhaka city as input in Celsius scale from the user using scanf()  function
+and convert it to Fahrenheit and print it.
+[Formula: F=C(9/5)+32]

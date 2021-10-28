@@ -1,0 +1,27 @@
+/*Take four integer variables a,b,x and y. Scan the values of the variables from user usin scanf() function.
+Now print the output of the following euqation:
+(a*b) + (x*y)
+
+Ja sam to napravio ovako ali ne radi...
+#include <stdio.h>  
+void main ()
+{
+    int a, b, x, y, rez;
+    rez = (a * b) + (x * y);                          <<<<<<OVDJE JE BILA GRESKA, OVO TREBA ICI LOKALNO
+    
+    printf("Jednadzba: (a*b) + (x*y)\n");
+                                                        scanf("%d\n"); <---- problem je bio u /n znaku  
+    printf("Unesite a znamenku:\n");                                         program prepoznaje da treba
+    scanf ("%d\n", &a);                                                      dodati razmak nakon broja
+    printf("Unesite b znamenku:\n");
+    scanf ("%d\n", &b);
+    printf("Unesite x znamenku:\n");
+    scanf ("%d\n", &x);
+    printf("Unesite y znamenku:\n");
+    scanf ("%d\n", &y);
+    
+    printf("------------------------\n");
+<<<<<<<<<<<<[MOZE I OVA VERZIJA ALI PRIJE printf TREBA STAVITI "{  int rez = (a*b) + (x*y);" i nakon njega "}".
+<<<<<<<<<<<<<                                DAKLE NE U "void main" nego lokalno]
+       
+    printf("Rezultat je: %d\n",rez);*/
