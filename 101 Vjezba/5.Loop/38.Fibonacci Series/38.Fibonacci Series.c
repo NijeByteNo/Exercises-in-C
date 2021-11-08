@@ -7,7 +7,7 @@ int main(void)
 
     while (first<=n)
     {
-       printf("%d",first);
+       printf("%d ",first);
        int temp = first;
        first=second;
        second=second+temp;
