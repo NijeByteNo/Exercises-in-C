@@ -1,0 +1,2 @@
+Write a program that takes an integer as input [1 - 12] and print the correspoding month name.
+[If user gives input 1 you should print "January"].

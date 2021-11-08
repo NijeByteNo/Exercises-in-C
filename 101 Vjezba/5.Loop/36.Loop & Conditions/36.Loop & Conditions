@@ -1,0 +1,2 @@
+Write a program which will take an itenger N from user and print all the numbers between N to - 32
+Stop your program when user will give N=-1 as input.

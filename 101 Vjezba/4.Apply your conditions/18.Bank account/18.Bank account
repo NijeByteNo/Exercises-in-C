@@ -1,0 +1,4 @@
+You are going to open a bank account. If your age is greater than 18
+then you can open an account.
+Get user age by input and print YES if they can open a bank account,
+otherwise print NO.

@@ -1,0 +1,10 @@
+You are given the rank and salary scale of a company-
+Rank - salary
+  1-     2,50,000 BDT
+  2-     2,10,000 BDT
+  3-     1,50,000 BDT
+  4-       80,000 BDT
+>=5-       50,000 BDT
+
+Now, take the rank as input from the user and print the salary of the given rank.
+[If user gives input 3, you should print "Your salary: 1,50,000 BDT].
