@@ -7,7 +7,7 @@ int main(void)
         {
             
             
-                printf("%c", i);
+                printf("%c", i);  
             
             
         }
