@@ -22,5 +22,5 @@ int main ()
 ,
 /*Zadao sam si cilj da cu raditi ove loopove toliko dugo dok jednog dana kada vidim zadatak u kojem ga treba koristiti, u istom trenutku skuzim
 koji loop je poreban i cijelu pozadinu izracunavanja istog loopa, jer previse vremena mi je oduzeo ovaj zadatak koji je budimo realni 
-manje od 20 linija koda. Tek tada nastavljam sa ucenjem programiranja, ili sta vec. I DONT KNOW WHAT I AM DOING!!!!!! :)
+manje od 20 linija koda. Tek tada nastavljam sa daljnjim ucenjem programiranja, ili sta vec ucim, nemam pojma. I DONT KNOW WHAT AM I DOING!!!!!! :)
 Rhapsody-Emerald Sword <17.11.2021> - ZENA TRUDNA 10.TJEDAN, PRVO DIJETE, JOS NISAM SVJESTAN, BIT CU ĆAĆA KOBOGDA. DODI SEBI IDI SPAVAJ MAZLUME*/
