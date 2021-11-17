@@ -1,0 +1,1 @@
+//Napisati program koji izracunava zbroj cifara unijetog cetverocifrenog broja.

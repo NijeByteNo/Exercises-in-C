@@ -1,0 +1,131 @@
+CHAR
+Standardna biblioteka sadrzi mnoge funkcije (i makroe) za rad sa karakterskim tipom i one su deklarirane u datoteci zaglavlja < ctype.h >
+Najkoristenije su "isaplpha i isdigit" i slicne kojima se provjerava da li je karatkter slovo abecede ili je cifra,
+kao i "toupper i tolower" kojima se malo slovo prevodi u veliko i obratno.
+---------------------------------------------------------------------------------------------------------------------------------------
+ZANIMLJIVOST:
+#include<stdio.h>
+int main()
+{
+    int const a, b;
+    printf("%d %d", 2147483647, 2147483648); //2147483647 se ispisuje kako pise a 2147483648 se ispisuje u negativnom broju
+                                            //jer se 2147483648 tumaci kao unsigned int i ne odgovara znaku %d.
+---------------------------------------------------------------------------------------------------------------------------------------
+NE POSTOJE NEGATIVNE KONSTANTE, ALI SE EFEKAT MOZE POSTICI TAKO DA KORISTIMO ZNAK - ISPRED KONSTANTE
+KONSTANTNI IZRAZ JE IZRAZ KOJI SADZI SAMO KONSTANTE
+---------------------------------------------------------------------------------------------------------------------------------------
+Pitanje 6.3.3.
+
+unsigned long int x = 0XFFFFFFFF; <<<Heksadeksalni broj vrijednosti 4294967295
+    printf("%u", x); <<<< Primjetiti znak %u, kada stavimo %d daje nam rezultat -1, sto je garbage value.
+---------------------------------------------------------------------------------------------------------------------------------------
+Pitanje 6.3.7.
+
+unsigned long int x = 0x20 + 020 + '2' - '0'; <<<< razliciti tipovi brojeva 
+    printf("%u", x);
+    ISPRINTAVA SE VRIJEDNOST 50
+---------------------------------------------------------------------------------------------------------------------------------------
+PItanje 6.3.8
+
+char c1 = 'a';
+    char c2 = 97;
+    printf("%c %d     %d %c",c1, c1, c2, c2);
+<<Output je  a 97     97 a
+---------------------------------------------------------------------------------------------------------------------------------------
+Prioriteti operatora pri izracunavanju:             ****VAZNO ZNATI****
+
+1. Unarni operatori (  -  (negativni broj),  ++  ,  -- ) imaju viši prioritet u odnosu na binarne ( +, -, *, / , % )
+2. Postfiksni unarni operatori imaju viši prioritet u odnosu na prefiksne unarne operatore.
+3. Aritmetički (Unarni i  binarni) operatori imaju viši prioritet u odnosu na relacijske ( <, >, =, <=, >=,, ==, != ) koji
+   imaju viši prioritet u odnosu na logičke ( && , || , !(negacija) )operatore.
+4. Operatori dodjele (=) imaju veoma nizak prioritet.
+
+Pri uporabi unarnih operatora za uvećanje i umanjenje važno je obratiti pozornost na položaj operatora. 
+Djelovanje operatora ovisi o tome nalazi li se operator prije (prefiksni) ili poslije (postfiksni) varijable. 
+Prefiksni operator najprije djeluje na varijablu sa svoje desne strane i zatim vraća tako promijenjenu vrijednost, 
+a postfiksni najprije vraća postojeću vrijednost, a tek zatim djeluje na varijablu sa svoje lijeve strane.
+---------------------------------------------------------------------------------------------------------------------------------------
+INT_MIN i INT_MAX su simbolicka imena cije su vrijednosti uvedene direktivom #define u datoteci zaglavlja <limits.h>. Njima odgovaraju
+vrijednosti najmanje i najvece vrijednosti tipa int na konkretnom sistemu.
+---------------------------------------------------------------------------------------------------------------------------------------
+DESNA I LIJEVA ASOCIJATIVNOST
+#include<stdio.h>
+int main()
+{
+    char c1 = 1 -2 -3;<<< output je -4 jer operator - (minus) ima lijevu asocijativnost
+                          da ima desnu asocijativnost rezultat bi bio 2
+    
+    printf("%d",c1);
+}
+Vecina operatora ima lijevu asocijativnost (najznacajniji izuzetci su  prefiksni unarni operatori i operatori dodjele).
+---------------------------------------------------------------------------------------------------------------------------------------
+Operator dodjele
+x = y = z = 0; <<<<<<< sve tri promjenjive imat ce vrijednost 0.
+
+"l-vrijednost" je izraz koji ukazuje na memorijsku lokaciju koja odgovara nekom
+objektu (taj objekat, na primjer, sigurno ne postoji samo privremeno u nekom registru).
+Izvorno, termin je bio inspiriran time da takav izraz mora biti sa lijeve (engl. left) strane
+operatora dodjele. Ipak, nisu sve l-vrijednosti istovremeno izmjenjive l-vrijednosti.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+Aritmeticki operatori.
+Operator % moze se primjeniti samo na cijeli broj.
+5++ nije ispravan izraz inkrementacije
+
+++n i n++, oba vrijede, a razlika je sto ++n uvecava vrijednost promjenjive n prije nego sto je upotrebljena u sirem izrazu,
+a n++ uvecava nakon sto je upotrebljena
+npr. 
+x=n++; dodjeljuje promjenjivoj vrijednost 5 
+a    x=++n; dodjeljuje promjenjivoj vrijednost 6
+Promjenjiva n je u oba slucaja dobila vrijednost 6.
+npr.
+int a = 5, b = 5, x = a++, y = ++b; <<< output a = 6, b = 6, 'x = 5', y = 6
+
+Ako inkrementiranje cini citavu naredbu, vrijednost izraza se i ne koristi i onda nema razlike izmedu naredbe n++ i ++n.
+npr. 
+int a = 3, b = 3;  <<<   OUTPUT OVOG KODA||||
+     a++;               <<<       =           ||||
+     ++b;               <<<   a = 4, b = 4    ||||
+---------------------------------------------------------------------------------------------------------------------------------------
+Lijeno izracunavanje logickih izraza
+npr.
+2<1 && a++   <<<< ovdje ce program odmah zakljuciti da 2 nije manje od 1 i dodijelit ce vrijednost false (0) i nema potrebe da 
+                  dalje racuna te ce vrijednost ostat ne promjenjena 
+Isti slucaj je i sa operatorom ILI (||)
+npr.
+1<2 || a++ <<<<<< ne mijenja se vrijednost promjenjive a, jer je program odmah zakljucio da je 1 manje od dva i dao vrijednost true (1)
+ali
+2<1 || a++ <<<<<< mijenja se vrijednost promjenjive a, jer nakon sto 2 nije manje od 1 program nastavlja da vidi i drugi dio operatora ||
+---------------------------------------------------------------------------------------------------------------------------------------
+NAPOMENA;;;>>>>>--PONOVNO POGLEDATI I SA RAZMIJEVANJEM UCITI POGLAVLJE KNJIGE "6.45 Bitovski operatori"-- RIJESAVAT ZADATKE--->>
+---------------------------------------------------------------------------------------------------------------------------------------
+Slozeni operatori dodjele:
+i = i + 2 isto je i kao i += 2. Naredba x = x * (y + 1) jednaka je x *= y + 1
+
+izraz1 op= izraz2 isto je i kao izraz1 = izraz1 op izraz2<<<< op je jedan od operatora
+
+Postoje iznimke kao npr.
+a[i++] += 1 <<<promjenjiva i inkrementira se samo jednom
+dok u slucaju npr.
+a[++] = a[++] +1 <<<< promjenjiva i se inkrementira dva puta 
+jos jedan primjer
+a[f()] += 1 <<<< funkcija f() se poziva samo jednom
+dok u slucaju npr.
+a[f()] = a[f()] +1 <<<< funkcija f() se poziva dva puta sto moze izazvati razlicit efekat ako funkcija f() u dva razlicita poziva vraca
+razlicite vrijednosti.
+---------------------------------------------------------------------------------------------------------------------------------------
+OPerator uslova:
+Koristi se u sljedecem opcem obliku:
+izraz1 ? izraz 2 : izraz3
+<<<<--- izraz1 se izracunava prvi. Ako on ima ne-nula vrijednost (tj. ako ima
+istinitu vrijednost true), onda se izračunava vrijednost izraza izraz2 i to je
+vrijednost čitavog uslovnog izraza. Inače se izračunava vrijednost izraz3 i to je
+vrijednost čitavog uslovnog izraza.
+---------------------------------------------------------------------------------------------------------------------------------------
+Operator sizeof
+odreduje velicinu nekog tipa ili promjenjive u bajtovima
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
