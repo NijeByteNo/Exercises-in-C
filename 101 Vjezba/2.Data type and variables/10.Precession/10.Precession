@@ -1,0 +1,3 @@
+Rahul got 65.00 on physics, 83.50 on mathematics, 85,75 on C programming and 67.50 on English.
+Now write a program to calculate the average of his marks on 4 subjects and print it up to 2 digits after the decimal point.
+[The result should look like: XX.XX]

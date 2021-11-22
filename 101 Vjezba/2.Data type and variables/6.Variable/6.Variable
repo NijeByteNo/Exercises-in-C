@@ -1,0 +1,5 @@
+Take three integer variables a, b and c. Assign values to the variables-
+a=10,
+b=20,
+c=30.
+Now print the sum of these three variables.

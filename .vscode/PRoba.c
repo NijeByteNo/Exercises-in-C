@@ -1,37 +1,17 @@
-#include <stdio.h>
-int main (void)
+#include<stdio.h>
+int main(void)
 {
-    int i, j;
-
-    for ( i = 0; i <=5; i++)
-{
-    for ( j = i; j <= 5; j++)
+    int ocjene[5];
+    int sum = 0;
+    int avg, i;
+    for ( i = 0; i < 5; i++)
+    scanf("%d", &ocjene[i]);
+    for ( i = 0; i < 5; i++)
     {
-    printf(" ");
+    sum = sum + ocjene[i];
     }
-        for ( j = 1; j < i; j++)
-        {
-        printf("*");
-        }
- 
-            for ( j = 1; j <=i; j++)
-            {
-            printf("*");
-            }
-    for ( j = i; j <= 5-1; j++)
-    {
-    printf("  ");
-    }
-        for ( j = 1; j < i; j++)
-        {
-        printf("*");
-        }
- 
-            for ( j = 1; j <=i; j++)
-            {
-            printf("*");
-            }
-printf("\n");
-}
+    printf("Sum is: %d",sum);
+    avg = sum / 5;
+    printf("\nAverage is: %d",avg);
 
 }

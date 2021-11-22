@@ -1,0 +1,11 @@
+Take two integer values i = 0 and j = 0. 
+Now write the output of the following program without running the code.
+
+void main ()
+{
+    int i=0;
+    int j=0;
+    j= j++ + ++i;
+    
+    printf("%d %d\n", i, j);
+}

@@ -1,0 +1,3 @@
+Write a program which will display all the prime numbers between 0 to N (N will be given by the user).
+If user gives N=20, your code will print the following output:
+2 3 5 7 11 13 17 19

@@ -11,4 +11,4 @@ int d;
         }
     }
 }
-//Potrebno obratiti pozornost na viticaste zagrade {}, puno sam se namucio dok nisam jebeni if ubacio na misto
+//Potrebno obratiti pozornost na viticaste zagrade {}, malo sam se mucio dok nisam jebeni if ubacio na misto
