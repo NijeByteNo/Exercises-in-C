@@ -1,0 +1,2 @@
+Take an array of integer data type of size 5. Scan the values from the user.
+Now print the average of integers which are greater than 100.

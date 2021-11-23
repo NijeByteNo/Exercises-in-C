@@ -1,39 +1,15 @@
 #include<stdio.h>
-int main ()
+int main (void)
 {
-	int find_next_prime (int nb)
-	{
-	int prime =2;
+	int i, count = 0;
+	int myArray[5];
 
-	if(nb <= 0)
+	for(i = 0; i < 5; i++)
 	{
-		return 0;
+		scanf("%d", &myArray[i]);
+		if(myArray[i] > 100) 
+		count++;
 	}
-	while (nb%prime!=0)
-	{
-		prime++;
-		if (nb == prime)
-		{
-			return prime;
-		}
-	}
-	while (nb%prime == 0)
-	{
-		nb++;
-		while (nb%prime != 0)
-		{
-			prime++;
-			if(nb%prime  == 0 && nb !=prime)
-			{
-			prime = 2;
-			break;
-			}
-			if(nb%prime == 0 && nb == prime)
-			{
-				return prime;
-			}
-		}
-	}
-find_next_prime(2);
-}
+
+	printf("\n%d\n",myArray);
 }

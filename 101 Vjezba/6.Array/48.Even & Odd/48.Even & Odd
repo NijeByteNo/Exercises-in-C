@@ -1,0 +1,6 @@
+Take an array of integer data type of size 5. Scan the values of the user.
+Now print the output like the following one:
+
+Values in array: 10 25 20 15 30
+Sum of odd vaues: 40
+Sum of even vales: 60
