@@ -1,15 +1,32 @@
-#include<stdio.h>
-int main (void)
+#include <stdio.h>
+#include <stdlib.h>
+int main()
 {
-	int i, count = 0;
-	int myArray[5];
+    int a,b,z,d,i,p,j;
+    printf("Enter base: ");
+    scanf("%d",&z);
+    printf("Enter number: ");
+    scanf("%d",&a);
+    b=a;
+    i=1;
+    p=0;
 
-	for(i = 0; i < 5; i++)
+    while(a>0)
 	{
-		scanf("%d", &myArray[i]);
-		if(myArray[i] > 100) 
-		count++;
-	}
-
-	printf("\n%d\n",myArray);
-}
+		a=a/z;
+               p++;
+               j=p;
+    }
+    for(i=1;i<=p;++i)
+	{
+            j=p;
+        while(j>0)
+		{
+                d=b%z;
+                b=b/z;
+                --j;
+        printf("%d",d);
+    	}
+    }
+  return 0;
+ }

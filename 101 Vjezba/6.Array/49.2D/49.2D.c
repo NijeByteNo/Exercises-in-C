@@ -2,7 +2,7 @@
 int main(void)
 {
     int array[3][3];
-    int i,j,sum = 0, sum1 = 0, count = 0;
+    int i,j,sum = 0, count = 0;
 
     for(i=0;i<3;i++)
 {
